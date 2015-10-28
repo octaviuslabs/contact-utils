@@ -1,0 +1,10 @@
+development: &base
+  build: .
+  volumes:
+    - .:/myapp
+
+test:
+  <<: *base
+  command: bundle exec rspec
+  environment:
+    RACK_ENV: test
